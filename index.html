@@ -14,30 +14,57 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            padding: 0;
+            width: 100vw;
         }
-        h1 {
-            font-size: 5rem;
+        .input-box {
+            display: inline-block;
+            padding: 20px 40px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size: 10vw;
             font-weight: bold;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            line-height: 1.1;
+            max-width: calc(100vw - 160px); /* 80px margin on each side */
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1em;
+            background: black;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
         a {
-            font-size: 1.5rem;
+            font-size: 2vw;
             text-decoration: none;
             color: black;
             border: 2px solid black;
             padding: 10px 20px;
             border-radius: 5px;
             transition: background 0.3s;
+            margin-top: 20px;
         }
         a:hover {
             background: black;
             color: white;
         }
+        @media (max-width: 600px) {
+            .input-box {
+                font-size: 15vw;
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Studio Input</h1>
+    <div class="input-box">Studio Input<span class="cursor"></span></div>
     <a href="mailto:thisisstudioinput@gmail.com">Get in Touch</a>
 </body>
 </html>
