@@ -22,13 +22,14 @@
             padding: 20px 40px;
             border: 2px solid black;
             border-radius: 5px;
-            font-size: 10vw;
+            font-size: min(10vw, 60px);
             font-weight: bold;
             text-transform: uppercase;
             line-height: 1.1;
-            max-width: calc(100vw - 160px); /* 80px margin on each side */
+            max-width: 80vw;
             white-space: nowrap;
             overflow: hidden;
+            box-sizing: border-box;
         }
         .cursor {
             display: inline-block;
@@ -42,7 +43,7 @@
             50% { opacity: 0; }
         }
         a {
-            font-size: 2vw;
+            font-size: min(4vw, 20px);
             text-decoration: none;
             color: black;
             border: 2px solid black;
@@ -57,8 +58,12 @@
         }
         @media (max-width: 600px) {
             .input-box {
-                font-size: 15vw;
-                display: block;
+                font-size: 12vw;
+                max-width: 90vw;
+                padding: 10px 20px;
+            }
+            .cursor {
+                width: 6px;
             }
         }
     </style>
